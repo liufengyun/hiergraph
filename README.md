@@ -49,6 +49,34 @@ The question can be made more precisely using technical terms:
 This is a typical shortest path problem. The current engine implements an
 algorithm to answer such queries.
 
+## Play
+
+```
+./hiergraph Hello.csv Hello java.io.File
+
+./hiergraph Hello.csv Hello java.net
+
+./hiergraph Hello.csv Hello java.util.regex
+```
+
+The file [Hello.csv](./Hello.csv) is generated using context-insensitive
+analysis of the [doop framework](https://github.com/plast-lab/doop-mirror). The
+program is the following:
+
+```java
+public class Hello {
+  public static void main(String[] args) {
+    new Hello().foo();
+  }
+
+  void foo() {
+    System.out.println("hello, world!");
+  }
+}
+```
+
+
+
 ## Usage
 
 The program can be run in two modes:
@@ -73,7 +101,9 @@ Prerequisite: install `scala-cli` (https://scala-cli.virtuslab.org/)
 ### Run as script
 
 ```
-scala-cli GraphQuery.scala -- deps.csv
+scala-cli GraphQuery.scala -- Hello.csv                        # start the REPL
+
+scala-cli GraphQuery.scala -- Hello.csv Hello java.util.regex  # batch job
 ```
 
 ### Run as a native executable
@@ -87,7 +117,9 @@ scala-cli package --native -o hiergraph GraphQuery.scala
 Now run the executable:
 
 ```
-./hiergraph deps.csv
+./hiergraph Hello.csv                           # start the REPL
+
+./hiergraph Hello.csv Hello java.util.regex     # batch job
 ```
 
 ## License
