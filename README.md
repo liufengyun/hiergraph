@@ -56,7 +56,7 @@ The program can be run in two modes:
 - Batch mode: `<program> deps.csv -s -n 4 a.b.c p.q`
 - REPL mode: `<program> deps.csv` and input `help` for commands
 
-See the section above for `<program>`.
+See the section [below](#run) for `<program>`.
 
 Options:
 
