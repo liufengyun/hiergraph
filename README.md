@@ -4,8 +4,8 @@ A simple query engine for hierarchical graph in a Scala script.
 
 ## What is a hierarchical graph?
 
-A hierarchical graph database is a directed graph augmented with a tree-like
-hierarchy among nodes. It consits of:
+A hierarchical graph is a directed graph augmented with a _tree-like
+hierarchy_ among nodes. It consits of:
 
 - __Leaf nodes__ and __edges__ between leaf nodes (dependencies).
 - Tree-like hierarchies between __leaf nodes__ and __non-leaf nodes__ (ownership).
@@ -39,9 +39,9 @@ Non-leaf nodes become dependent due to the depndencies of their leaf nodes.
 
 A particular question about hierarchical graph is:
 
-> why a node `A` depends on another node `B`?
+> Why a node `A` depends on another node `B`?
 
-The question can be made more precisely:
+The question can be made more precisely using technical terms:
 
 > What are the shortest paths from A to B, which only contain one-hop in A and
 > one-hop in B?
@@ -59,7 +59,7 @@ Prerequisite: install `scala-cli` (https://scala-cli.virtuslab.org/)
 scala-cli GraphQuery.scala -- deps.csv
 ```
 
-### Run as an executable
+### Run as a native executable
 
 First, generate an executable:
 
