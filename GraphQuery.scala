@@ -367,14 +367,23 @@ object Util:
   end run
 
   val text =
-    """|Batch mode: `<program> deps.csv -s -n 4 a.b.c p.q`
+    """|========================================================================
+       |hiergraph -- a hierarchical graph query engine
+       |Usage: hiergraph [-s] [-n N] deps.csv [<from> <to>]
+       |------------------------------------------------------------------------
+       |Examples:
        |
-       |REPL mode: `<program> deps.csv` and input `help` for commands
+       |- Batch mode: hiergraph deps.csv -s -n 4 a.b.c p.q
        |
+       |- REPL mode: `hiergraph deps.csv` and input `help`
+       |------------------------------------------------------------------------
        |Options:
        |        -s        silent, do not print debug informaiton
        |
-       |        -n N      limit the number of path to N, default is 1""".stripMargin
+       |        -n N      limit the number of path to N, default is 1
+       |------------------------------------------------------------------------
+       |Bug report:  https://github.com/liufengyun/hiergraph
+       |========================================================================""".stripMargin
 
   def help(): Unit =
     println(text)
