@@ -1,6 +1,6 @@
 # Hierarchical Graph
 
-A simple query engine for hierarchical graph in a Scala script.
+A simple query engine for hierarchical graphs in a Scala script.
 
 ## What is a hierarchical graph?
 
@@ -37,7 +37,7 @@ Non-leaf nodes become dependent due to the depndencies of their leaf nodes.
 
 ## Querying a hierarchical graph
 
-A particular question about hierarchical graph is:
+A particular question about hierarchical graphs is:
 
 > Why a node `A` depends on another node `B`?
 
