@@ -51,6 +51,8 @@ algorithm to answer such queries.
 
 ## Play
 
+Note: _please refer to the section [Run](#run) on how to build the program_.
+
 ``` bash
 ./hiergraph Hello.csv Hello java.io.File
 
@@ -83,10 +85,8 @@ public class Hello {
 
 The program can be run in two modes:
 
-- Batch mode: `<program> deps.csv -s -n 4 a.b.c p.q`
-- REPL mode: `<program> deps.csv` and input `help` for commands
-
-See the section [below](#run) for `<program>`.
+- Batch mode: `hiergraph deps.csv -s -n 4 a.b.c p.q`
+- REPL mode: `hiergraph deps.csv` and input `help` for commands
 
 Options:
 
