@@ -20,8 +20,7 @@ import Util.*
  *
  * Non-leaf nodes become dependent due to the depndencies of their leaf nodes.
  *
- * This query engine explains why two nodes in the HGDB are dependent.
- *
+ * This query engine explains why two nodes in the graph are dependent.
  */
 
 // ---------------------------- Core Logic ---------------------------------
@@ -259,9 +258,9 @@ class Repl(graph: Graph):
       case "path" =>
         path(inputs.toList.tail)
         run()
+end Repl
 
 // -------------------------------- Utilities ----------------------------------
-
 
 object Util:
   extension (text: String)
@@ -384,9 +383,9 @@ object Util:
        |Bug report:  https://github.com/liufengyun/hiergraph
        |========================================================================""".stripMargin
 
-  def help(): Unit =
-    println(text)
+  def help(): Unit = println(text)
 
+end Util
 
 // -------------------------------- Entry point --------------------------------
 
