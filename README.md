@@ -49,6 +49,23 @@ The question can be made more precisely using technical terms:
 This is a typical shortest path problem. The current engine implements an
 algorithm to answer such queries.
 
+## Usage
+
+The program can be run in two modes:
+
+- Batch mode: `<program> deps.csv -s -n 4 a.b.c p.q`
+- REPL mode: `<program> deps.csv` and input `help` for commands
+
+See the section above for `<program>`.
+
+Options:
+
+```
+        -s        silent, do not print debug informaiton
+
+        -n N      limit the number of path to N, default is 1""".stripMargin
+```
+
 ## Run
 
 Prerequisite: install `scala-cli` (https://scala-cli.virtuslab.org/)
@@ -71,21 +88,4 @@ Now run the executable:
 
 ```
 ./hiergraph deps.csv
-```
-
-## Usage
-
-The program can be run in two modes:
-
-- Batch mode: `<program> deps.csv -s -n 4 a.b.c p.q`
-- REPL mode: `<program> deps.csv` and input `help` for commands
-
-See the section above for `<program>`.
-
-Options:
-
-```
-        -s        silent, do not print debug informaiton
-
-        -n N      limit the number of path to N, default is 1""".stripMargin
 ```
