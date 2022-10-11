@@ -51,7 +51,7 @@ algorithm to answer such queries.
 
 ## Play
 
-```
+``` bash
 ./hiergraph Hello.csv Hello java.io.File
 
 ./hiergraph Hello.csv Hello java.net
@@ -102,7 +102,7 @@ Prerequisite: install `scala-cli` (https://scala-cli.virtuslab.org/)
 
 ### Run as script
 
-```
+``` bash
 scala-cli GraphQuery.scala -- Hello.csv                        # start the REPL
 
 scala-cli GraphQuery.scala -- Hello.csv Hello java.util.regex  # batch job
@@ -112,7 +112,7 @@ scala-cli GraphQuery.scala -- Hello.csv Hello java.util.regex  # batch job
 
 First, generate an executable:
 
-```
+``` bash
 scala-cli package --native -o hiergraph GraphQuery.scala
 ```
 
@@ -121,7 +121,7 @@ of a packaged Java application launcher.
 
 Now run the executable:
 
-```
+``` bash
 ./hiergraph Hello.csv                           # start the REPL
 
 ./hiergraph Hello.csv Hello java.util.regex     # batch job
