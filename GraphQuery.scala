@@ -3,7 +3,7 @@ import scala.collection.mutable
 import Util.*
 
 /**
- * This script implements a simple query engine for a hierarchical graphs (HG).
+ * This script implements a simple query engine for hierarchical graphs.
  *
  * The input to the engine is a CSV file of the following format:
  *
