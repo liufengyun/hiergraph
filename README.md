@@ -106,13 +106,16 @@ scala-cli GraphQuery.scala -- Hello.csv                        # start the REPL
 scala-cli GraphQuery.scala -- Hello.csv Hello java.util.regex  # batch job
 ```
 
-### Run as a native executable
+### Run as an executable
 
 First, generate an executable:
 
 ```
 scala-cli package --native -o hiergraph GraphQuery.scala
 ```
+
+The option `--native` tells `scala-cli` to produce a native executable instead
+of a packaged Java application launcher.
 
 Now run the executable:
 
