@@ -57,6 +57,8 @@ algorithm to answer such queries.
 ./hiergraph Hello.csv Hello java.net
 
 ./hiergraph Hello.csv Hello java.util.regex
+
+./hiergraph Hello.csv java.lang.String java.io
 ```
 
 The file [Hello.csv](./Hello.csv) is generated using context-insensitive
