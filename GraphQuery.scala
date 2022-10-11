@@ -216,10 +216,9 @@ class Repl(graph: Graph):
     "help",
   )
 
-  def path(args: Array[String])(using ctx: Context): Unit =
-    assert(args(0) == "path")
+  def path(args: List[String])(using ctx: Context): Unit =
     var limit = ctx.defaultLimit
-    val remaining = parseOptions(args.toList) { (option, nextArgs) =>
+    val remaining = parseOptions(args) { (option, nextArgs) =>
       option match
       case "-n" =>
         if nextArgs.isEmpty || !nextArgs(0).matches(raw"\d+") then
@@ -234,7 +233,7 @@ class Repl(graph: Graph):
     }
 
     if remaining.size != 2 then
-      error("Incorrect command, expect source and dest")
+      error("Incorrect command, expect source and dest, found = " + remaining)
       return
 
     val from :: to :: Nil = remaining: @unchecked
@@ -258,7 +257,7 @@ class Repl(graph: Graph):
         run()
 
       case "path" =>
-        path(inputs)
+        path(inputs.toList.tail)
         run()
 
 // -------------------------------- Utilities ----------------------------------
@@ -299,7 +298,7 @@ object Util:
     remaining.toList
 
   def debug(info: String)(using ctx: Context): Unit =
-    if !ctx.silent then println(("[DEBUG] " + info).dim)
+    if !ctx.silent then println(("[info] " + info).dim)
 
   def warn(message: String): Unit =
     println(message.yellow)
@@ -325,7 +324,7 @@ object Util:
     showResult(paths)
 
   def run(args: Array[String]): Unit =
-    var limit = 1
+    var limit = 5
     var silent = false
     val remaining = parseOptions(args.toList) { (option, nextArgs) =>
       option match
@@ -380,7 +379,7 @@ object Util:
        |Options:
        |        -s        silent, do not print debug informaiton
        |
-       |        -n N      limit the number of path to N, default is 1
+       |        -n N      limit the number of path to N, default is 5
        |------------------------------------------------------------------------
        |Bug report:  https://github.com/liufengyun/hiergraph
        |========================================================================""".stripMargin

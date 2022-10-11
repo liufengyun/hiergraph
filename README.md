@@ -63,7 +63,7 @@ Options:
 ```
         -s        silent, do not print debug informaiton
 
-        -n N      limit the number of path to N, default is 1
+        -n N      limit the number of path to N, default is 5
 ```
 
 ## Run
