@@ -81,7 +81,7 @@ scala-cli GraphQuery.scala -- deps.csv
 First, generate an executable:
 
 ```
-scala-cli package --native -o hgraph GraphQuery.scala
+scala-cli package --native -o hiergraph GraphQuery.scala
 ```
 
 Now run the executable:
@@ -89,3 +89,7 @@ Now run the executable:
 ```
 ./hiergraph deps.csv
 ```
+
+## License
+
+MIT
