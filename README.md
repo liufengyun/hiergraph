@@ -15,7 +15,7 @@ There are many hierarchical graphs in the real world:
 - Managerial hierarchies and functional dependencies in a big organization
 - Call graphs of computer programs
 
-It is difficult to get insights to a flat graph with too many edges and nodes.
+It is difficult to gain insights into a flat graph with too many edges and nodes.
 Hierarchy is the key to make a complex graph understandable.
 
 ## Representing a hierarchical graph in text
