@@ -101,8 +101,8 @@ class Graph(root: Parent):
     fromNode.addSuccessor(toNode)
 
   def search(from: String, to: String, limit: Int)(using Context): List[List[Leaf]] =
-    val fromParts = from.split('.').toList
-    val toParts = to.split('.').toList
+    val fromParts = from.pathSegments
+    val toParts = to.pathSegments
 
     val fromNode =
       root.findNode(fromParts) match
@@ -268,6 +268,35 @@ object Util:
     def red: String = Console.RED + text + Console.RESET
     def yellow: String = Console.YELLOW + text + Console.RESET
 
+    def pathSegments: List[String] =
+      val stack = new mutable.Stack[Char]
+      val parts = new mutable.Stack[String]
+      val sb = new StringBuffer
+      var i = 0
+      while i < text.size do
+        if text(i) == '.' then
+          if stack.isEmpty then
+            parts += sb.toString()
+            sb.delete(0, sb.length())
+          else
+            sb.append(text(i))
+        else
+          sb.append(text(i))
+          if text(i) == '(' then
+            stack.push(text(i))
+          else if text(i) == ')' then
+            if stack.top == '(' then
+              stack.pop()
+            else
+              error("Unbalenced parenthesis: " + text)
+          end if
+        end if
+        i += 1
+      end while
+
+      parts += sb.toString()
+      parts.toList
+
   def loadCSV(file: String): Graph =
     val graph = new Graph(new Parent("root", mutable.Map.empty, null))
 
@@ -276,8 +305,8 @@ object Util:
       val fields = line.split(',')
       assert(fields.size == 2, "line = " + line)
 
-      val fromParts = fields(0).trim.split('.').toList
-      val toParts = fields(1).trim.split('.').toList
+      val fromParts = fields(0).trim.pathSegments
+      val toParts = fields(1).trim.pathSegments
 
       graph.addEdge(fromParts, toParts)
     }
