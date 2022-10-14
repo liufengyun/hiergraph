@@ -1,0 +1,13 @@
+Search path: [33mHello -> java.util.Locale[0m
+[33mPath 1 (length = 11):[0m
+Hello.foo()
+java.io.PrintStream.println(java.lang.String)
+java.io.PrintStream.newLine()
+java.lang.Thread.interrupt()
+java.lang.Thread.checkAccess()
+java.lang.SecurityManager.checkAccess(java.lang.Thread)
+java.lang.SecurityManager.checkPermission(java.security.Permission)
+java.security.AccessController.checkPermission(java.security.Permission)
+java.lang.StringBuilder.append(java.lang.Object)
+java.lang.String.valueOf(java.lang.Object)
+java.util.Locale.toString()
