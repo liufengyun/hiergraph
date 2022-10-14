@@ -20,6 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Compile
-      run: scala-cli package -f --native -o hiergraph  GraphQuery.scala
+      run: scala-cli package -f -o hiergraph  GraphQuery.scala
     - name: Test
       run: ./test
