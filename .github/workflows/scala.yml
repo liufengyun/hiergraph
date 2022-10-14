@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   build:
+  
+    runs-on: ubuntu-latest
 
     container: 
       image: virtuslab/scala-cli:0.1.15
