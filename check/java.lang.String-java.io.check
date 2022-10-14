@@ -1,0 +1,27 @@
+Search path: [33mjava.lang.String -> java.io[0m
+[33mPath 1 (length = 2):[0m
+java.lang.String.valueOf(java.lang.Object)
+java.io.File.toString()
+
+[33mPath 2 (length = 3):[0m
+java.lang.String.getBytes(java.lang.String)
+java.lang.StringCoding.encode(java.lang.String;char[];int;int)
+java.io.UnsupportedEncodingException.<init>(java.lang.String)
+
+[33mPath 3 (length = 3):[0m
+java.lang.String.<init>(byte[];int;int;java.lang.String)
+java.lang.StringCoding.decode(java.lang.String;byte[];int;int)
+java.io.UnsupportedEncodingException.<init>(java.lang.String)
+
+[33mPath 4 (length = 4):[0m
+java.lang.String.<init>(byte[];int;int)
+java.lang.StringCoding.decode(byte[];int;int)
+java.lang.StringCoding.decode(java.lang.String;byte[];int;int)
+java.io.UnsupportedEncodingException.<init>(java.lang.String)
+
+[33mPath 5 (length = 5):[0m
+java.lang.String.toLowerCase(java.util.Locale)
+java.lang.ConditionalSpecialCasing.toLowerCaseCharArray(java.lang.String;int;java.util.Locale)
+java.lang.ConditionalSpecialCasing.lookUpTable(java.lang.String;int;java.util.Locale;boolean)
+java.util.Hashtable.get(java.lang.Object)
+java.io.FilePermission.hashCode()

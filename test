@@ -1,0 +1,31 @@
+#! /bin/sh
+
+set -e
+
+GREEN='\033[0;32m'
+RESET='\033[0m'
+
+CMD="scala-cli GraphQuery.scala --"
+
+# Run once
+echo "test run"
+$CMD -s Hello.csv Hello java.io
+
+echo ""
+
+for file in check/*.check; do
+  # echo "checking $file"
+
+  name=${file##*/}
+  base="${name%.check}"
+  from=$(echo $base | cut -d'-' -f1)
+  to=$(echo $base | cut -d'-' -f2)
+
+  printf "$CMD Hello.csv -s $from $to"
+
+  $CMD Hello.csv -s $from $to > check/$base.out
+
+  diff $file check/$base.out
+
+  printf " - ${GREEN}success${RESET}\n"
+done

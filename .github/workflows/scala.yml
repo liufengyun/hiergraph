@@ -1,0 +1,23 @@
+name: Scala CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: virtuslab/scala-cli:0.1.15
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test
+      run: ./test
