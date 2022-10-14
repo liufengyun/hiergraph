@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+
+set -e
+
+GREEN='\033[0;32m'
+RESET='\033[0m'
+
+for file in check/*.check; do
+  # echo "checking $file"
+
+  name=${file##*/}
+  base="${name%.check}"
+  from=$(echo $base | cut -d'-' -f1)
+  to=$(echo $base | cut -d'-' -f2)
+
+  printf "./hiergraph Hello.csv -s $from $to"
+
+  ./hiergraph Hello.csv -s $from $to > check/$base.out
+
+  diff $file check/$base.out
+
+  printf " - ${GREEN}success${RESET}\n"
+done
