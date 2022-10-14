@@ -12,8 +12,9 @@ permissions:
 jobs:
   build:
 
-    runs-on: virtuslab/scala-cli:0.1.15
-
+    container: 
+      image: virtuslab/scala-cli:0.1.15
+    
     steps:
     - uses: actions/checkout@v3
     - name: Compile
